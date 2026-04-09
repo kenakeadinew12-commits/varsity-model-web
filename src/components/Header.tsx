@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, GraduationCap } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import logo from "@/assets/logo.jpg";
 
 const navItems = [
   { label: "Home", path: "/" },
@@ -19,16 +20,13 @@ const Header = () => {
     <header className="sticky top-0 z-50 bg-primary shadow-lg">
       <div className="container mx-auto flex items-center justify-between px-4 py-3">
         <Link to="/" className="flex items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gold">
-            <GraduationCap className="h-6 w-6 text-accent-foreground" />
-          </div>
+          <img src={logo} alt="HUMS Logo" className="h-10 w-10 rounded-full object-cover" />
           <div className="leading-tight">
             <span className="block text-lg font-bold text-primary-foreground">Haramaya University</span>
             <span className="block text-xs font-medium text-gold">Model School</span>
           </div>
         </Link>
 
-        {/* Desktop nav */}
         <nav className="hidden items-center gap-1 md:flex">
           {navItems.map((item) => (
             <Link
@@ -45,7 +43,6 @@ const Header = () => {
           ))}
         </nav>
 
-        {/* Mobile toggle */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
           className="text-primary-foreground md:hidden"
@@ -55,7 +52,6 @@ const Header = () => {
         </button>
       </div>
 
-      {/* Mobile nav */}
       {mobileOpen && (
         <nav className="border-t border-navy-light bg-primary px-4 pb-4 md:hidden">
           {navItems.map((item) => (

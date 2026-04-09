@@ -64,7 +64,7 @@ const Contact = () => {
             <ul className="space-y-5">
               {[
                 { icon: MapPin, label: "Address", value: "Haramaya University Campus, Haramaya, Oromia, Ethiopia" },
-                { icon: Phone, label: "Phone", value: "+251-25-553-0078" },
+                { icon: Phone, label: "Phone", value: "+251901357102" },
                 { icon: Mail, label: "Email", value: "info@humodelschool.edu.et" },
                 { icon: Clock, label: "Office Hours", value: "Mon - Fri: 8:00 AM - 5:00 PM" },
               ].map((c) => (

@@ -1,9 +1,10 @@
-import { Atom, Globe } from "lucide-react";
+import { Atom, Globe, Shapes } from "lucide-react";
 import Layout from "@/components/Layout";
 import Breadcrumb from "@/components/Breadcrumb";
 
-const natural = ["Mathematics", "Physics", "Chemistry", "Biology", "ICT (Information & Communication Technology)", "Technical Drawing"];
-const social = ["Economics", "Geography", "History", "Civics & Ethical Education", "Business Studies", "Amharic", "English Language"];
+const natural = ["Mathematics", "Physics", "Chemistry", "Biology", "ICT (Information & Communication Technology)", "English", "Agriculture", "Amharic"];
+const social = ["Economics", "Geography", "History", "Civics & Ethical Education", "Mathematics", "Amharic", "English Language"];
+const others = ["Health and Physical Education", "Art", "Music", "Career and Technical Education"];
 
 const SubjectGrid = ({ subjects, icon: Icon, title, color }: { subjects: string[]; icon: typeof Atom; title: string; color: string }) => (
   <div>
@@ -36,6 +37,7 @@ const Academics = () => (
       <div className="container mx-auto space-y-16 px-4">
         <SubjectGrid subjects={natural} icon={Atom} title="Natural Sciences" color="bg-primary" />
         <SubjectGrid subjects={social} icon={Globe} title="Social Sciences" color="bg-primary" />
+        <SubjectGrid subjects={others} icon={Shapes} title="Others" color="bg-primary" />
       </div>
     </section>
   </Layout>
