@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Users, Award, Atom, Globe } from "lucide-react";
+import { ArrowRight, Users, Award } from "lucide-react";
 import Layout from "@/components/Layout";
 import excellenceImg from "@/assets/excellence.jpg";
 import directorImg from "@/assets/director.jpg";
@@ -49,20 +49,6 @@ const Index = () => (
       </div>
     </section>
 
-    {/* Academic Programs strip */}
-    <section className="bg-primary py-8">
-      <div className="container mx-auto grid grid-cols-1 gap-6 px-4 text-center md:grid-cols-2">
-        {[
-          { icon: Atom, label: "Natural Science" },
-          { icon: Globe, label: "Social Science" },
-        ].map((s) => (
-          <div key={s.label} className="flex flex-col items-center gap-2">
-            <s.icon className="h-8 w-8 text-gold" />
-            <span className="text-3xl font-bold text-primary-foreground">{s.label}</span>
-          </div>
-        ))}
-      </div>
-    </section>
 
     {/* Announcements */}
     <section className="py-16">
