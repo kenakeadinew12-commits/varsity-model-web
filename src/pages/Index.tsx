@@ -4,7 +4,7 @@ import Layout from "@/components/Layout";
 import excellenceImg from "@/assets/excellence.jpg";
 import directorImg from "@/assets/director.jpg";
 import footballImg from "@/assets/football.jpg";
-import girlsImg from "@/assets/girls.jpg";
+import modelexamImg from "@/assets/modelexam.jpg";
 
 const announcements = [
   {
@@ -20,10 +20,10 @@ const announcements = [
     img: footballImg,
   },
   {
-    title: "High School Tutorials",
-    date: "April 3, 2026",
-    excerpt: "Tutorials for high school girls and 12th-grade Entrance preparation.",
-    img: girlsImg,
+    title: "Model Exam Started",
+    date: "April 9, 2026",
+    excerpt: "Model exams have officially started for all grade levels. Students are encouraged to prepare thoroughly and give their best effort.",
+    img: modelexamImg,
   },
 ];
 
@@ -53,13 +53,12 @@ const Index = () => (
     <section className="bg-primary py-8">
       <div className="container mx-auto grid grid-cols-1 gap-6 px-4 text-center md:grid-cols-2">
         {[
-          { icon: Atom, label: "Natural Science", value: "Science Stream" },
-          { icon: Globe, label: "Social Science", value: "Social Stream" },
+          { icon: Atom, label: "Natural Science" },
+          { icon: Globe, label: "Social Science" },
         ].map((s) => (
           <div key={s.label} className="flex flex-col items-center gap-2">
             <s.icon className="h-8 w-8 text-gold" />
             <span className="text-3xl font-bold text-primary-foreground">{s.label}</span>
-            <span className="text-sm text-primary-foreground/70">{s.value}</span>
           </div>
         ))}
       </div>
