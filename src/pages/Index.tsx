@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Users, Award, Atom, Globe } from "lucide-react";
+import { ArrowRight, Users, Award } from "lucide-react";
 import Layout from "@/components/Layout";
 import excellenceImg from "@/assets/excellence.jpg";
 import directorImg from "@/assets/director.jpg";
