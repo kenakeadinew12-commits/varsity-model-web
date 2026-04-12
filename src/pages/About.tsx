@@ -1,7 +1,7 @@
 import { BookOpen, Eye, History } from "lucide-react";
 import Layout from "@/components/Layout";
 import Breadcrumb from "@/components/Breadcrumb";
-import toppersImg from "@/assets/toppers.jpg";
+import toppersImg from "@/assets/top.jpg";
 import studentsImg from "@/assets/students.jpg";
 import msImg from "@/assets/MS.jpg";
 
@@ -18,7 +18,7 @@ const About = () => (
     <section className="py-16">
       <div className="container mx-auto grid gap-8 px-4 md:grid-cols-2">
         <div className="overflow-hidden rounded-lg border bg-card shadow-sm">
-          <img src={toppersImg} alt="Top students" className="h-48 w-full object-cover" />
+          <img src={toppersImg} alt="Top students" className="w-full object-contain" />
           <div className="p-8">
             <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary">
               <BookOpen className="h-6 w-6 text-gold" />
