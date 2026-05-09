@@ -1,26 +1,37 @@
 import { User } from "lucide-react";
 import Layout from "@/components/Layout";
 import Breadcrumb from "@/components/Breadcrumb";
+import seyoumImg from "@/assets/staff/seyoum.jpg";
+import bayushImg from "@/assets/staff/bayush.jpg";
+import abdiImg from "@/assets/staff/abdi.jpg";
+import abdroImg from "@/assets/staff/abdro.jpg";
+import feyeraImg from "@/assets/staff/feyera.jpg";
+import fikruImg from "@/assets/staff/fikru.jpg";
+import ebisaImg from "@/assets/staff/ebisa.jpg";
+import almazImg from "@/assets/staff/almaz.jpg";
+import tatekImg from "@/assets/staff/tatek.jpg";
+import bontuImg from "@/assets/staff/unkown.jpg";
 
 interface StaffMember {
   name: string;
   role: string;
+  image?: string;
 }
 
 const directorates: StaffMember[] = [
-  { name: "Mr. Seyoum Shega", role: "Director" },
-  { name: "Mrs. Bayush Getahun", role: "KG Vice Director & Daycare Coordinator" },
-  { name: "Abdi Jemal Ousman", role: "Vice Director for Primary School (1–8)" },
-  { name: "Abdurahman Hassen", role: "Vice Director for Primary School (1–8)" },
-  { name: "Feyera Tilahun", role: "Vice Director for High School" },
+  { name: "Seyoum Shega", role: "Director", image: seyoumImg },
+  { name: "Bayush Getahun", role: "KG Vice Director & Daycare Coordinator", image: bayushImg },
+  { name: "Abdi Jemal Ousman", role: "Vice Director for Primary School (1–8)", image: abdiImg },
+  { name: "Abdurahman Hassen", role: "Vice Director for Primary School (1–8)", image: abdroImg },
+  { name: "Feyera Tilahun", role: "Vice Director for High School", image: feyeraImg },
 ];
 
 const management: StaffMember[] = [
-  { name: "Tatek Mekonin", role: "Unit Leader" },
+  { name: "Tatek Mekonin", role: "Unit Leader", image: tatekImg },
   { name: "Mulugeta Gudissa", role: "English Department Head" },
-  { name: "Bontu Tesfaye", role: "Mathematics Department Head" },
-  { name: "Ebisa Belay", role: "Natural Sciences Department Head" },
-  { name: "Almaz Digafe", role: "Amharic Department Head" },
+  { name: "Bontu Tesfaye", role: "Mathematics Department Head", image: bontuImg },
+  { name: "Ebisa Belay", role: "Natural Sciences Department Head", image: ebisaImg },
+  { name: "Almaz Digafe", role: "Amharic Department Head", image: almazImg },
   { name: "Sichale Idosa", role: "Afan Oromo Department Head" },
   { name: "Misrak Fanta", role: "Social Sciences Department Head" },
   { name: "Jemal Abdo", role: "Unit Leader" },
@@ -28,7 +39,7 @@ const management: StaffMember[] = [
   { name: "Bikile Gadisa", role: "Unit Leader" },
   { name: "Shelema Ketema", role: "Unit Leader" },
   { name: "Mahlet Zeleke", role: "Unit Leader" },
-  { name: "Fikru Bekele", role: "Sport Department Head (1–8)" },
+  { name: "Fikru Bekele", role: "Sport Department Head (1–8)", image: fikruImg },
   { name: "Yared Shimelis", role: "Sport Department Head (9–12)" },
   { name: "Rome Teklu", role: "Mathematics Department (9–12)" },
   { name: "Alemeshet Zewedie", role: "Languages' Department Head" },
@@ -46,8 +57,12 @@ const StaffGrid = ({ title, members }: { title: string; members: StaffMember[] }
           key={m.name}
           className="flex flex-col items-center rounded-lg border bg-card p-6 text-center shadow-sm transition-shadow hover:shadow-md"
         >
-          <div className="mb-4 flex h-24 w-24 items-center justify-center rounded-full bg-secondary">
-            <User className="h-12 w-12 text-primary" />
+          <div className="mb-4 flex h-24 w-24 items-center justify-center overflow-hidden rounded-full bg-secondary">
+            {m.image ? (
+              <img src={m.image} alt={m.name} className="h-full w-full object-cover" />
+            ) : (
+              <User className="h-12 w-12 text-primary" />
+            )}
           </div>
           <h3 className="font-semibold text-foreground">{m.name}</h3>
           <p className="mt-1 text-sm text-muted-foreground">{m.role}</p>
