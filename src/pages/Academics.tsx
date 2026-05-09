@@ -126,6 +126,8 @@ const Academics = () => {
       </div>
     </section>
   </Layout>
-);
+  );
+};
+
 
 export default Academics;
