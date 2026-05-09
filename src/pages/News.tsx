@@ -5,8 +5,16 @@ import footballImg from "@/assets/football.jpg";
 import girlsImg from "@/assets/girls.jpg";
 import midexamImg from "@/assets/midexam.jpg";
 import modelexamImg from "@/assets/modelexam.jpg";
+import femaleFootballImg from "@/assets/news/femalefootball.jpg";
+import maleFootballImg from "@/assets/news/malefootball.jpg";
+import tutorialGirlImg from "@/assets/news/tutorialgirl.jpg";
+import twelfthModelImg from "@/assets/news/12thmodel.jpg";
 
 const news = [
+  { date: "May 8, 2026", title: "Female Football Begins", body: "The school's female football tournament has officially kicked off. We look forward to an exciting season of sportsmanship.", img: femaleFootballImg },
+  { date: "May 8, 2026", title: "Thrilling Football Semi-Final", body: "In a dramatic match, the 8th-grade team knocked out the 9th-grade team to reach the finals. After a 2-2 draw in regulation time, the 8th grade triumphed 5-4 in a penalty shootout. They will face either the 10th or 11th grade in the final.", img: maleFootballImg },
+  { date: "May 8, 2026", title: "High School Girls Tutorial", body: "The specialized tutorial program designed to support our high school girls has continued.", img: tutorialGirlImg },
+  { date: "May 6, 2026", title: "Model Exams Begin", body: "The Grade 12 second-semester Model Examination officially commenced on Monday, May 6, 2026.", img: twelfthModelImg },
   { date: "April 9, 2026", title: "Model Exam Started", body: "Model exams have officially started for all grade levels. Students are encouraged to prepare thoroughly and give their best effort.", img: modelexamImg },
   { date: "April 8, 2026", title: "Football Matches", body: "Exciting inter-school football matches were held, showcasing our students' athletic talent and team spirit.", img: footballImg },
   { date: "April 4, 2026", title: "Haramaya University Math Competition Winners", body: "Abenezer Nebyu (Grade 9) won 2nd place and Sami Elyas (Grade 10) won 3rd place.", img: null },

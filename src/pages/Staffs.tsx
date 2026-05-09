@@ -11,6 +11,11 @@ import ebisaImg from "@/assets/staff/ebisa.jpg";
 import almazImg from "@/assets/staff/almaz.jpg";
 import tatekImg from "@/assets/staff/tatek.jpg";
 import bontuImg from "@/assets/staff/unkown.jpg";
+import jamalImg from "@/assets/staff/jamal.jpg";
+import yaredImg from "@/assets/staff/yared.jpg";
+import alemshetImg from "@/assets/staff/alemshet.jpg";
+import abdelaImg from "@/assets/staff/abdela.jpg";
+import gemechisImg from "@/assets/staff/gemechis.jpg";
 
 interface StaffMember {
   name: string;
@@ -28,22 +33,22 @@ const directorates: StaffMember[] = [
 
 const management: StaffMember[] = [
   { name: "Tatek Mekonin", role: "Unit Leader", image: tatekImg },
-  { name: "Mulugeta Gudissa", role: "English Department Head" },
+  { name: "Mulugeta Gudisa", role: "English Department Head", image: abdelaImg },
   { name: "Bontu Tesfaye", role: "Mathematics Department Head", image: bontuImg },
   { name: "Ebisa Belay", role: "Natural Sciences Department Head", image: ebisaImg },
   { name: "Almaz Digafe", role: "Amharic Department Head", image: almazImg },
   { name: "Sichale Idosa", role: "Afan Oromo Department Head" },
   { name: "Misrak Fanta", role: "Social Sciences Department Head" },
-  { name: "Jemal Abdo", role: "Unit Leader" },
+  { name: "Jamal Abdo", role: "Unit Leader", image: jamalImg },
   { name: "Gizachew Tadesse", role: "Unit Leader" },
   { name: "Bikile Gadisa", role: "Unit Leader" },
   { name: "Shelema Ketema", role: "Unit Leader" },
   { name: "Mahlet Zeleke", role: "Unit Leader" },
   { name: "Fikru Bekele", role: "Sport Department Head (1–8)", image: fikruImg },
-  { name: "Yared Shimelis", role: "Sport Department Head (9–12)" },
+  { name: "Yared Shimelis", role: "Sport Department Head (9–12)", image: yaredImg },
   { name: "Rome Teklu", role: "Mathematics Department (9–12)" },
-  { name: "Alemeshet Zewedie", role: "Languages' Department Head" },
-  { name: "Gemechis Ejigu", role: "Social Science Department Head" },
+  { name: "Alemshet Zewedie", role: "Languages' Department Head", image: alemshetImg },
+  { name: "Gemechis Ejigu", role: "Social Science Department Head", image: gemechisImg },
   { name: "Arif Mohammed", role: "Natural Science Department Head" },
   { name: "Tamiru Wogi", role: "Teachers Association" },
 ];
