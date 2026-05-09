@@ -3,27 +3,35 @@ import { ArrowRight, Users, Award } from "lucide-react";
 import Layout from "@/components/Layout";
 import excellenceImg from "@/assets/excellence.jpg";
 import directorImg from "@/assets/director.jpg";
-import footballImg from "@/assets/football.jpg";
-import modelexamImg from "@/assets/modelexam.jpg";
+import femaleFootballImg from "@/assets/news/femalefootball.jpg";
+import maleFootballImg from "@/assets/news/malefootball.jpg";
+import tutorialGirlImg from "@/assets/news/tutorialgirl.jpg";
+import twelfthModelImg from "@/assets/news/12thmodel.jpg";
 
 const announcements = [
   {
-    title: "Haramaya University Math Competition Winners",
-    date: "April 4, 2026",
-    excerpt: "Abenezer Nebyu (Grade 9) won 2nd place and Sami Elyas (Grade 10) won 3rd place.",
-    img: null,
+    title: "Female Football Begins",
+    date: "May 8, 2026",
+    excerpt: "The school's female football tournament has officially kicked off. We look forward to an exciting season of sportsmanship.",
+    img: femaleFootballImg,
   },
   {
-    title: "Football Matches",
-    date: "April 8, 2026",
-    excerpt: "Exciting inter-school football matches were held, showcasing our students' athletic talent and team spirit.",
-    img: footballImg,
+    title: "Thrilling Football Semi-Final",
+    date: "May 8, 2026",
+    excerpt: "8th grade knocked out 9th grade in a dramatic 5-4 penalty shootout after a 2-2 draw, advancing to the finals.",
+    img: maleFootballImg,
   },
   {
-    title: "Model Exam Started",
-    date: "April 9, 2026",
-    excerpt: "Model exams have officially started for all grade levels. Students are encouraged to prepare thoroughly and give their best effort.",
-    img: modelexamImg,
+    title: "High School Girls Tutorial",
+    date: "May 8, 2026",
+    excerpt: "The specialized tutorial program designed to support our high school girls has continued.",
+    img: tutorialGirlImg,
+  },
+  {
+    title: "Model Exams Begin",
+    date: "May 6, 2026",
+    excerpt: "The Grade 12 second-semester Model Examination officially commenced on Monday, May 6, 2026.",
+    img: twelfthModelImg,
   },
 ];
 
