@@ -1,29 +1,15 @@
-import { Atom, Globe, Shapes, Baby, BookOpen, GraduationCap, School, Users } from "lucide-react";
+import { useEffect, useState } from "react";
+import { Baby, BookOpen, GraduationCap, School, Users } from "lucide-react";
 import Layout from "@/components/Layout";
 import Breadcrumb from "@/components/Breadcrumb";
 import AnimatedCounter from "@/components/AnimatedCounter";
+import { supabase } from "@/integrations/supabase/client";
 
 const programs = [
-  {
-    icon: Baby,
-    title: "Daycare",
-    desc: "A safe, nurturing environment for our youngest learners, focused on early sensory and social development.",
-  },
-  {
-    icon: BookOpen,
-    title: "KG (Amharic & Afan Oromo)",
-    desc: "Kindergarten programs in Amharic and Afan Oromo that build foundational literacy, numeracy, and social skills.",
-  },
-  {
-    icon: School,
-    title: "Grades 1–6 (Afan Oromo & Amharic)",
-    desc: "Primary education in students' mother tongue, ensuring strong fundamentals across core subjects.",
-  },
-  {
-    icon: GraduationCap,
-    title: "Grades 7–12 (English)",
-    desc: "Middle and secondary education delivered in English, preparing students for national exams and higher education.",
-  },
+  { icon: Baby, title: "Daycare", desc: "A safe, nurturing environment for our youngest learners, focused on early sensory and social development." },
+  { icon: BookOpen, title: "KG (Amharic & Afan Oromo)", desc: "Kindergarten programs in Amharic and Afan Oromo that build foundational literacy, numeracy, and social skills." },
+  { icon: School, title: "Grades 1–6 (Afan Oromo & Amharic)", desc: "Primary education in students' mother tongue, ensuring strong fundamentals across core subjects." },
+  { icon: GraduationCap, title: "Grades 7–12 (English)", desc: "Middle and secondary education delivered in English, preparing students for national exams and higher education." },
 ];
 
 const studentStats = [
@@ -42,10 +28,21 @@ const staffStats = [
   { label: "Secondary School (9–12) Staff", total: 32, male: 26, female: 6 },
 ];
 
-const totalStudents = studentStats.reduce((s, x) => s + x.total, 0);
-const totalStaff = staffStats.reduce((s, x) => s + x.total, 0);
+const Academics = () => {
+  const [totalStudents, setTotalStudents] = useState(studentStats.reduce((s, x) => s + x.total, 0));
+  const [totalStaff, setTotalStaff] = useState(staffStats.reduce((s, x) => s + x.total, 0));
 
-const Academics = () => (
+  useEffect(() => {
+    supabase.from("statistics").select("key,value").then(({ data }) => {
+      if (!data) return;
+      const map = Object.fromEntries(data.map((d) => [d.key, d.value]));
+      if (map.total_students) setTotalStudents(map.total_students);
+      if (map.total_staff) setTotalStaff(map.total_staff);
+    });
+  }, []);
+
+  return (
+
   <Layout>
     <Breadcrumb items={[{ label: "Home", path: "/" }, { label: "Academics" }]} />
 
@@ -129,6 +126,8 @@ const Academics = () => (
       </div>
     </section>
   </Layout>
-);
+  );
+};
+
 
 export default Academics;
