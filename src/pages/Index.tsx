@@ -41,7 +41,18 @@ const Index = () => {
             {announcements.map((a) => (
               <div key={a.id} className="group overflow-hidden rounded-lg border bg-card shadow-sm transition-shadow hover:shadow-md">
                 {a.image_url ? (
-                  <img src={a.image_url} alt={a.title} className="h-48 w-full object-cover" />
+                  a.image_url.includes("tutorialgirl") ? (
+                    <div className="flex h-48 w-full items-center justify-center bg-secondary">
+                      <img src={a.image_url} alt={a.title} className="h-full w-full object-contain" />
+                    </div>
+                  ) : (
+                    <img
+                      src={a.image_url}
+                      alt={a.title}
+                      className="h-48 w-full object-cover"
+                      style={{ objectPosition: a.image_url.includes("malefootball") ? "center bottom" : "center" }}
+                    />
+                  )
                 ) : (
                   <div className="flex h-48 items-center justify-center bg-secondary text-6xl">🏆</div>
                 )}
