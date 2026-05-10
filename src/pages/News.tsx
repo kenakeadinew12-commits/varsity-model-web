@@ -25,7 +25,20 @@ const News = () => {
         <div className="container mx-auto max-w-3xl space-y-6 px-4">
           {items.map((n) => (
             <article key={n.id} className="overflow-hidden rounded-lg border bg-card shadow-sm transition-shadow hover:shadow-md">
-              {n.image_url && <img src={n.image_url} alt={n.title} className="h-56 w-full object-cover" />}
+              {n.image_url && (
+                n.image_url.includes("tutorialgirl") ? (
+                  <div className="flex h-56 w-full items-center justify-center bg-secondary">
+                    <img src={n.image_url} alt={n.title} className="h-full w-full object-contain" />
+                  </div>
+                ) : (
+                  <img
+                    src={n.image_url}
+                    alt={n.title}
+                    className="h-56 w-full object-cover"
+                    style={{ objectPosition: n.image_url.includes("malefootball") ? "center bottom" : "center" }}
+                  />
+                )
+              )}
               <div className="p-6">
                 <div className="mb-2 flex items-center gap-2 text-sm text-muted-foreground">
                   <CalendarDays className="h-4 w-4 text-primary" />
