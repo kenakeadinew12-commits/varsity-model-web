@@ -106,7 +106,7 @@ const Academics = () => {
 
     {/* Programs */}
     <section className="py-16">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto max-w-7xl px-4">
         <div className="mb-10 text-center">
           <h2 className="text-2xl font-bold text-foreground md:text-3xl">Our Programs</h2>
           <p className="mt-2 text-muted-foreground">From daycare through 12th grade, taught in Amharic, Afan Oromo, and English</p>
@@ -121,6 +121,47 @@ const Academics = () => {
               <p className="text-sm leading-relaxed text-muted-foreground">{p.desc}</p>
             </div>
           ))}
+        </div>
+      </div>
+    </section>
+
+    {/* Galleries by section */}
+    <section className="bg-secondary/30 py-16">
+      <div className="container mx-auto max-w-7xl px-4">
+        <div className="mb-10 text-center">
+          <h2 className="text-2xl font-bold text-foreground md:text-3xl">Inside Our School</h2>
+          <p className="mt-2 text-muted-foreground">Faculty group photos and classroom moments across every level</p>
+        </div>
+        <div className="space-y-8">
+          <SectionGallery
+            title="Daycare"
+            description="Our youngest learners in a nurturing environment."
+            placeholderCount={3}
+            placeholderLabel="Daycare Photo"
+          />
+          <SectionGallery
+            title="Kindergarten (KG)"
+            description="Foundational learning in Amharic and Afan Oromo."
+            groupPhoto="/cms-assets/kgteachers.jpg"
+            groupPhotoCaption="KG Teaching Staff"
+            images={["/cms-assets/kgstudents1.jpg", "/cms-assets/kgstudents2.jpg", "/cms-assets/kgstudents3.jpg"]}
+          />
+          <SectionGallery
+            title="Primary School (Grades 1–8)"
+            description="Strong fundamentals taught in students' mother tongue."
+            groupPhoto="/cms-assets/allteachers.jpg"
+            groupPhotoCaption="Primary & Secondary Teaching Staff"
+            placeholderCount={3}
+            placeholderLabel="Primary Photo"
+          />
+          <SectionGallery
+            title="Secondary School (Grades 9–12)"
+            description="Preparing students for national exams and higher education."
+            groupPhoto="/cms-assets/allteachers.jpg"
+            groupPhotoCaption="Primary & Secondary Teaching Staff"
+            placeholderCount={3}
+            placeholderLabel="Secondary Photo"
+          />
         </div>
       </div>
     </section>
