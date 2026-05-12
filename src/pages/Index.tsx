@@ -34,7 +34,7 @@ const Index = () => {
       </section>
 
       <section className="py-16">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto max-w-7xl px-4">
           <h2 className="mb-2 text-center text-3xl font-bold text-foreground">Latest Announcements</h2>
           <p className="mb-10 text-center text-muted-foreground">Stay updated with school news and events</p>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
@@ -70,8 +70,30 @@ const Index = () => {
         </div>
       </section>
 
+      <section className="py-16">
+        <div className="container mx-auto max-w-7xl px-4">
+          <h2 className="mb-2 text-center text-3xl font-bold text-foreground">Life at Our School</h2>
+          <p className="mb-10 text-center text-muted-foreground">A glimpse into our daily activities, culture, and community</p>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              { src: "/cms-assets/daycare2.jpg", caption: "Safe and nurturing daycare environment" },
+              { src: "/cms-assets/art.jpg", caption: "Encouraging creativity through art" },
+              { src: "/cms-assets/queue.jpg", caption: "Structured school activities" },
+              { src: "/cms-assets/culture.jpg", caption: "Celebrating our rich cultural heritage" },
+            ].map((item) => (
+              <figure key={item.src} className="group overflow-hidden rounded-lg border bg-card shadow-sm transition-shadow hover:shadow-md">
+                <div className="aspect-[4/3] w-full overflow-hidden bg-secondary">
+                  <img src={item.src} alt={item.caption} className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" />
+                </div>
+                <figcaption className="p-4 text-center text-sm font-medium text-foreground">{item.caption}</figcaption>
+              </figure>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="bg-secondary py-16">
-        <div className="container mx-auto flex flex-col items-center gap-8 px-4 md:flex-row">
+        <div className="container mx-auto flex max-w-7xl flex-col items-center gap-8 px-4 md:flex-row">
           <img src={directorImg} alt="Mr. Seyoum Shega" className="h-48 w-48 flex-shrink-0 rounded-full object-cover shadow-lg" />
           <div>
             <h2 className="mb-2 text-2xl font-bold text-foreground">Director's Welcome</h2>

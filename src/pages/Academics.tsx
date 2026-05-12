@@ -136,8 +136,7 @@ const Academics = () => {
           <SectionGallery
             title="Daycare"
             description="Our youngest learners in a nurturing environment."
-            placeholderCount={3}
-            placeholderLabel="Daycare Photo"
+            images={["/cms-assets/kids1.jpg", "/cms-assets/kids2.jpg", "/cms-assets/kids3.jpg"]}
           />
           <SectionGallery
             title="Kindergarten (KG)"
@@ -147,20 +146,13 @@ const Academics = () => {
             images={["/cms-assets/kgstudents1.jpg", "/cms-assets/kgstudents2.jpg", "/cms-assets/kgstudents3.jpg"]}
           />
           <SectionGallery
-            title="Primary School (Grades 1–8)"
-            description="Strong fundamentals taught in students' mother tongue."
+            title="Primary & Secondary School (Grades 1–12)"
+            description="Strong fundamentals through to national exam preparation."
             groupPhoto="/cms-assets/allteachers.jpg"
             groupPhotoCaption="Primary & Secondary Teaching Staff"
-            placeholderCount={3}
-            placeholderLabel="Primary Photo"
-          />
-          <SectionGallery
-            title="Secondary School (Grades 9–12)"
-            description="Preparing students for national exams and higher education."
-            groupPhoto="/cms-assets/allteachers.jpg"
-            groupPhotoCaption="Primary & Secondary Teaching Staff"
-            placeholderCount={3}
-            placeholderLabel="Secondary Photo"
+            images={["/cms-assets/classstudents.jpg"]}
+            placeholderCount={6}
+            placeholderLabel="Classroom Photo"
           />
         </div>
       </div>
