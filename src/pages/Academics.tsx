@@ -1,9 +1,62 @@
 import { useEffect, useState } from "react";
-import { Baby, BookOpen, GraduationCap, School, Users } from "lucide-react";
+import { Baby, BookOpen, GraduationCap, ImageIcon, School, Users } from "lucide-react";
 import Layout from "@/components/Layout";
 import Breadcrumb from "@/components/Breadcrumb";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import { supabase } from "@/integrations/supabase/client";
+
+const Placeholder = ({ label }: { label: string }) => (
+  <div className="flex aspect-[4/3] w-full flex-col items-center justify-center rounded-lg border-2 border-dashed border-muted-foreground/30 bg-muted/40 p-4 text-center">
+    <ImageIcon className="mb-2 h-8 w-8 text-muted-foreground/60" />
+    <p className="text-sm font-medium text-muted-foreground">{label}</p>
+    <p className="text-xs text-muted-foreground/70">Coming Soon</p>
+  </div>
+);
+
+const SectionGallery = ({
+  title,
+  description,
+  groupPhoto,
+  groupPhotoCaption,
+  images = [],
+  placeholderCount = 0,
+  placeholderLabel = "Photo",
+}: {
+  title: string;
+  description?: string;
+  groupPhoto?: string;
+  groupPhotoCaption?: string;
+  images?: string[];
+  placeholderCount?: number;
+  placeholderLabel?: string;
+}) => (
+  <div className="rounded-xl border bg-card p-6 shadow-sm md:p-8">
+    <div className="mb-6">
+      <h3 className="text-2xl font-bold text-foreground">{title}</h3>
+      {description && <p className="mt-1 text-sm text-muted-foreground">{description}</p>}
+    </div>
+    {groupPhoto && (
+      <figure className="mb-6 overflow-hidden rounded-lg border">
+        <img src={groupPhoto} alt={groupPhotoCaption ?? title} className="h-auto w-full object-cover" />
+        {groupPhotoCaption && (
+          <figcaption className="bg-secondary px-4 py-2 text-center text-sm text-muted-foreground">{groupPhotoCaption}</figcaption>
+        )}
+      </figure>
+    )}
+    {(images.length > 0 || placeholderCount > 0) && (
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {images.map((src, i) => (
+          <div key={src} className="overflow-hidden rounded-lg border bg-muted">
+            <img src={src} alt={`${title} ${i + 1}`} className="aspect-[4/3] w-full object-cover" />
+          </div>
+        ))}
+        {Array.from({ length: placeholderCount }).map((_, i) => (
+          <Placeholder key={i} label={placeholderLabel} />
+        ))}
+      </div>
+    )}
+  </div>
+);
 
 const programs = [
   { icon: Baby, title: "Daycare", desc: "A safe, nurturing environment for our youngest learners, focused on early sensory and social development." },
@@ -53,7 +106,7 @@ const Academics = () => {
 
     {/* Programs */}
     <section className="py-16">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto max-w-7xl px-4">
         <div className="mb-10 text-center">
           <h2 className="text-2xl font-bold text-foreground md:text-3xl">Our Programs</h2>
           <p className="mt-2 text-muted-foreground">From daycare through 12th grade, taught in Amharic, Afan Oromo, and English</p>
@@ -72,9 +125,50 @@ const Academics = () => {
       </div>
     </section>
 
+    {/* Galleries by section */}
+    <section className="bg-secondary/30 py-16">
+      <div className="container mx-auto max-w-7xl px-4">
+        <div className="mb-10 text-center">
+          <h2 className="text-2xl font-bold text-foreground md:text-3xl">Inside Our School</h2>
+          <p className="mt-2 text-muted-foreground">Faculty group photos and classroom moments across every level</p>
+        </div>
+        <div className="space-y-8">
+          <SectionGallery
+            title="Daycare"
+            description="Our youngest learners in a nurturing environment."
+            placeholderCount={3}
+            placeholderLabel="Daycare Photo"
+          />
+          <SectionGallery
+            title="Kindergarten (KG)"
+            description="Foundational learning in Amharic and Afan Oromo."
+            groupPhoto="/cms-assets/kgteachers.jpg"
+            groupPhotoCaption="KG Teaching Staff"
+            images={["/cms-assets/kgstudents1.jpg", "/cms-assets/kgstudents2.jpg", "/cms-assets/kgstudents3.jpg"]}
+          />
+          <SectionGallery
+            title="Primary School (Grades 1–8)"
+            description="Strong fundamentals taught in students' mother tongue."
+            groupPhoto="/cms-assets/allteachers.jpg"
+            groupPhotoCaption="Primary & Secondary Teaching Staff"
+            placeholderCount={3}
+            placeholderLabel="Primary Photo"
+          />
+          <SectionGallery
+            title="Secondary School (Grades 9–12)"
+            description="Preparing students for national exams and higher education."
+            groupPhoto="/cms-assets/allteachers.jpg"
+            groupPhotoCaption="Primary & Secondary Teaching Staff"
+            placeholderCount={3}
+            placeholderLabel="Secondary Photo"
+          />
+        </div>
+      </div>
+    </section>
+
     {/* Animated statistics */}
     <section className="bg-primary py-16 text-primary-foreground">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto max-w-7xl px-4">
         <div className="mb-10 text-center">
           <h2 className="text-2xl font-bold md:text-3xl">Our School in Numbers</h2>
           <p className="mt-2 text-primary-foreground/70">A snapshot of our students and staff</p>
