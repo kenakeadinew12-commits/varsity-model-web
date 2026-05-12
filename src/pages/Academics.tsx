@@ -168,7 +168,7 @@ const Academics = () => {
 
     {/* Animated statistics */}
     <section className="bg-primary py-16 text-primary-foreground">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto max-w-7xl px-4">
         <div className="mb-10 text-center">
           <h2 className="text-2xl font-bold md:text-3xl">Our School in Numbers</h2>
           <p className="mt-2 text-primary-foreground/70">A snapshot of our students and staff</p>
