@@ -50,7 +50,7 @@ const Index = () => {
                       src={a.image_url}
                       alt={a.title}
                       className="h-56 w-full object-cover"
-                      style={{ objectPosition: a.image_url.includes("malefootball") ? "center bottom" : "center" }}
+                      style={{ objectPosition: a.image_url.includes("malefootball") ? "center 30%" : "center" }}
                     />
                   )
                 ) : (
