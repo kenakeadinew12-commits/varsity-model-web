@@ -150,9 +150,14 @@ const Academics = () => {
             description="Strong fundamentals through to national exam preparation."
             groupPhoto="/cms-assets/allteachers.jpg"
             groupPhotoCaption="Primary & Secondary Teaching Staff"
-            images={["/cms-assets/classstudents.jpg"]}
-            placeholderCount={6}
-            placeholderLabel="Classroom Photo"
+            images={[
+              "/cms-assets/4th.jpg",
+              "/cms-assets/6th.jpg",
+              "/cms-assets/8th.jpg",
+              "/cms-assets/9th.jpg",
+              "/cms-assets/10th.jpg",
+              "/cms-assets/library2.jpg",
+            ]}
           />
         </div>
       </div>
