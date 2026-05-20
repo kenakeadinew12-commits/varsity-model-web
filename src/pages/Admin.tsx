@@ -36,7 +36,7 @@ const Admin = () => {
       <header className="border-b bg-primary text-primary-foreground">
         <div className="container mx-auto flex items-center justify-between px-4 py-3">
           <div className="flex items-center gap-3">
-            <img src={logo} alt="" className="h-9 w-9 object-contain" />
+            <img src={logo} alt="" className="h-12 w-12 object-contain bg-transparent p-1" />
             <div>
               <h1 className="font-bold">Admin Dashboard</h1>
               <p className="text-xs text-primary-foreground/70">{user.email}</p>
