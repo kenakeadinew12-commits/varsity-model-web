@@ -6,8 +6,9 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import NewsManager from "@/components/admin/NewsManager";
 import StaffManager from "@/components/admin/StaffManager";
 import StatsManager from "@/components/admin/StatsManager";
+import HelpGuide from "@/components/admin/HelpGuide";
 import { LogOut, Home } from "lucide-react";
-import logo from "@/assets/logo.jpg";
+const logo = "/cms-assets/Harmayalogo.webp";
 
 const Admin = () => {
   const { user, isAdmin, loading, signOut } = useAuth();
@@ -35,7 +36,7 @@ const Admin = () => {
       <header className="border-b bg-primary text-primary-foreground">
         <div className="container mx-auto flex items-center justify-between px-4 py-3">
           <div className="flex items-center gap-3">
-            <img src={logo} alt="" className="h-9 w-9 rounded-full" />
+            <img src={logo} alt="" className="h-9 w-9 object-contain" />
             <div>
               <h1 className="font-bold">Admin Dashboard</h1>
               <p className="text-xs text-primary-foreground/70">{user.email}</p>
@@ -58,10 +59,12 @@ const Admin = () => {
             <TabsTrigger value="news">News</TabsTrigger>
             <TabsTrigger value="staff">Staff</TabsTrigger>
             <TabsTrigger value="stats">Statistics</TabsTrigger>
+            <TabsTrigger value="help">Help &amp; User Guide</TabsTrigger>
           </TabsList>
           <TabsContent value="news"><NewsManager /></TabsContent>
           <TabsContent value="staff"><StaffManager /></TabsContent>
           <TabsContent value="stats"><StatsManager /></TabsContent>
+          <TabsContent value="help"><HelpGuide /></TabsContent>
         </Tabs>
       </main>
     </div>
