@@ -1,13 +1,13 @@
 import { Mail, Phone, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
-import logo from "@/assets/logo.jpg";
+const logo = "/cms-assets/Harmayalogo.webp";
 
 const Footer = () => (
   <footer className="bg-primary text-primary-foreground">
     <div className="container mx-auto grid gap-8 px-4 py-12 md:grid-cols-3">
       <div>
         <div className="mb-4 flex items-center gap-3">
-          <img src={logo} alt="HUMS Logo" className="h-10 w-10 rounded-full object-cover" />
+          <img src={logo} alt="HUMS Logo" className="h-10 w-10 object-contain" />
           <div className="leading-tight">
             <span className="block font-bold">Haramaya University</span>
             <span className="block text-xs text-gold">Model School</span>

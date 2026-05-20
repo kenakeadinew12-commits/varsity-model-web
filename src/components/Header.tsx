@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
-import logo from "@/assets/logo.jpg";
+const logo = "/cms-assets/Harmayalogo.webp";
 
 const navItems = [
   { label: "Home", path: "/" },
@@ -20,7 +20,7 @@ const Header = () => {
     <header className="sticky top-0 z-50 bg-primary shadow-lg">
       <div className="container mx-auto flex items-center justify-between px-4 py-3">
         <Link to="/" className="flex items-center gap-3">
-          <img src={logo} alt="HUMS Logo" className="h-10 w-10 rounded-full object-cover" />
+          <img src={logo} alt="HUMS Logo" className="h-10 w-10 object-contain" />
           <div className="leading-tight">
             <span className="block text-lg font-bold text-primary-foreground">Haramaya University</span>
             <span className="block text-xs font-medium text-gold">Model School</span>

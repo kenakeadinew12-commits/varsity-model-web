@@ -35,7 +35,7 @@ const News = () => {
                     src={n.image_url}
                     alt={n.title}
                     className="h-56 w-full object-cover"
-                    style={{ objectPosition: n.image_url.includes("malefootball") ? "center 30%" : "center" }}
+                    style={{ objectPosition: n.image_url.includes("malefootball") ? "center 85%" : "center" }}
                   />
                 )
               )}
