@@ -50,7 +50,7 @@ const Index = () => {
                       src={a.image_url}
                       alt={a.title}
                       className="h-56 w-full object-cover"
-                      style={{ objectPosition: a.image_url.includes("malefootball") ? "center 30%" : "center" }}
+                      style={{ objectPosition: a.image_url.includes("malefootball") ? "center 85%" : "center" }}
                     />
                   )
                 ) : (
@@ -74,12 +74,13 @@ const Index = () => {
         <div className="container mx-auto max-w-7xl px-4">
           <h2 className="mb-2 text-center text-3xl font-bold text-foreground">Life at Our School</h2>
           <p className="mb-10 text-center text-muted-foreground">A glimpse into our daily activities, culture, and community</p>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
             {[
               { src: "/cms-assets/daycare2.jpg", caption: "Safe and nurturing daycare environment" },
               { src: "/cms-assets/art.jpg", caption: "Encouraging creativity through art" },
               { src: "/cms-assets/queue.jpg", caption: "Structured school activities" },
               { src: "/cms-assets/culture.jpg", caption: "Celebrating our rich cultural heritage" },
+              { src: "/cms-assets/library.jpg", caption: "Fostering a culture of reading, research, and independent academic discovery in our student library." },
             ].map((item) => (
               <figure key={item.src} className="group overflow-hidden rounded-lg border bg-card shadow-sm transition-shadow hover:shadow-md">
                 <div className="aspect-[4/3] w-full overflow-hidden bg-secondary">
