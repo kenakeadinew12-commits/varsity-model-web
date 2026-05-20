@@ -20,7 +20,7 @@ const Header = () => {
     <header className="sticky top-0 z-50 bg-primary shadow-lg">
       <div className="container mx-auto flex items-center justify-between px-4 py-3">
         <Link to="/" className="flex items-center gap-3">
-          <img src={logo} alt="HUMS Logo" className="h-10 w-10 object-contain" />
+          <img src={logo} alt="HUMS Logo" className="h-12 w-12 object-contain bg-transparent p-1" />
           <div className="leading-tight">
             <span className="block text-lg font-bold text-primary-foreground">Haramaya University</span>
             <span className="block text-xs font-medium text-gold">Model School</span>

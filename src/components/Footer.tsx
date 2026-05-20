@@ -7,7 +7,7 @@ const Footer = () => (
     <div className="container mx-auto grid gap-8 px-4 py-12 md:grid-cols-3">
       <div>
         <div className="mb-4 flex items-center gap-3">
-          <img src={logo} alt="HUMS Logo" className="h-10 w-10 object-contain" />
+          <img src={logo} alt="HUMS Logo" className="h-12 w-12 object-contain bg-transparent p-1" />
           <div className="leading-tight">
             <span className="block font-bold">Haramaya University</span>
             <span className="block text-xs text-gold">Model School</span>

@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
-import logo from "@/assets/logo.jpg";
+const logo = "/cms-assets/Harmayalogo.webp";
 
 const Auth = () => {
   const { signIn, signUp, session } = useAuth();
@@ -34,7 +34,9 @@ const Auth = () => {
     <div className="flex min-h-screen items-center justify-center bg-secondary px-4">
       <form onSubmit={submit} className="w-full max-w-md space-y-5 rounded-lg border bg-card p-8 shadow-lg">
         <div className="flex flex-col items-center gap-2 text-center">
-          <img src={logo} alt="HUMS" className="h-14 w-14 rounded-full object-cover" />
+          <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary p-2 shadow-lg">
+            <img src={logo} alt="HUMS" className="h-full w-full object-contain" />
+          </div>
           <h1 className="text-2xl font-bold">Admin {mode === "signin" ? "Sign In" : "Sign Up"}</h1>
           <p className="text-sm text-muted-foreground">Haramaya University Model School</p>
         </div>
